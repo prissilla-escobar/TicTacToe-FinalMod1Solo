@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    color: rgb(6, 49, 144);
+    /* border: 2px solid orange; */
+    font-size: 35px;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+#root, #__next {
+  isolation: isolate;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.tic-tac-toe-area {
+    height: 100%;
+    width: 60%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.players-turn {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.playing-box {
+    width: 75%;
+    height: 65%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-items: center;
+    align-content: center;
+    justify-content: center;
+}
+.box {
+    text-align: center;
+    padding: 40px;
+    font-size: 20px;
+}
+
+.box1 {
+    border-right: 5px solid orange;
+    border-bottom: 5px solid orange;
+}
+
+.box2 {
+    border-right: 5px solid orange;
+    border-bottom: 5px solid orange;
+}
+
+.box3 {
+    border-bottom: 5px solid orange;
+}
+
+.box4 {
+    border-right: 5px solid orange;
+    border-bottom: 5px solid orange; 
+}
+
+.box5 {
+    border-right: 5px solid orange;
+    border-bottom: 5px solid orange; 
+}
+
+.box6 {
+    border-bottom: 5px solid orange;
+}
+
+.box7 {
+    border-right: 5px solid orange;
+}
+
+.box8 {
+    border-right: 5px solid orange;
+}
+
+.left-sidebar {
+    display: flex;
+    justify-content: center;
+    width: 20%;
+    height: 100%;
+    background:linear-gradient(0deg, red, orange, yellow, green, blue, indigo, violet, red);
+    /* border: 2px solid orange; */
+}
+
+.right-sidebar {
+    display: flex;
+    justify-content: center;
+    width: 20%;
+    height: 100%;
+    background: linear-gradient(0deg, red, orange, yellow, green, blue, indigo, violet, red);
+    /* border: 2px solid orange;
+    border: 2px solid blue; */
+}
+
+.left-wins {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    width: 75%;
+    height: 15%;
+    margin-top: 45px;
+    /* border: 2px solid pink */
+}
+
+.right-wins {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    width: 75%;
+    height: 15%;
+    margin-top: 45px;
+    /* border: 2px solid pink */
+}
+
+.players-turn {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    width: 75%;
+    height: 15%;
+    margin-top: 45px;
+    /* border: 2px solid darkorange */
+}
