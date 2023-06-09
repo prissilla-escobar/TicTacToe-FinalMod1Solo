@@ -15,7 +15,7 @@ var players = [ {
     isTurn: false,
     token: "⭐️",
     class: ".star-emoji",
-    boxesOccupied = []
+    boxesOccupied: []
     }, 
     {id: 2,
     name: "player2",
@@ -43,21 +43,30 @@ var wins = [
 // event listeners
 
 window.addEventListener("load", displayTurn)
-
 grid.addEventListener("click", function(event) {
-
+    addToken(event)
 })
 
 
 // functions
+function randomPlayer(array) {
+    return Math.floor(Math.random() * array.length)
+}
 
 function displayTurn() {
     var randoPlayer = players[randomPlayer(players)]
      playersTurn.innerHTML = `It's ${randoPlayer.token}'s Turn!`
 }
 
+function addToken(event) {
+    for (var i = 0; i < players.length; i++) {
+        event.target.closest('section').innerHTML = `${players[i].token}`
+    }
+}
+
 function increaseWins() {
-    for (var i = 0; i < wins.length; i++) {
+    for (var i = 0; i < wins[i].length; i++) {
+        console.log("hi")
     }
     for (var i = 0; i < players.length; i++) {
         if (players.boxesOccupied[j]) {
@@ -68,14 +77,6 @@ function increaseWins() {
 
 // players[i].wins += 1
 // if players[i].wins = 3
-
-function randomPlayer(array) {
-    return Math.floor(Math.random() * array.length)
-}
-
-function addToken() {
-
-}
 
 // maybe try to do it this way when refactoring
 // function createPlayer(player) {
