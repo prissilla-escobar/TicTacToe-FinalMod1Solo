@@ -63,24 +63,28 @@ body {
 .box {
     text-align: center;
     padding: 40px;
-    font-size: 20px;
+    font-size: 40px;
 }
 
-.box1 {
+.box1,
+.box2,
+.box4,
+.box5 {
     border-right: 5px solid orange;
     border-bottom: 5px solid orange;
 }
 
-.box2 {
+/* .box2 {
     border-right: 5px solid orange;
     border-bottom: 5px solid orange;
-}
+} */
 
-.box3 {
+.box3,
+.box6 {
     border-bottom: 5px solid orange;
 }
 
-.box4 {
+/* .box4 {
     border-right: 5px solid orange;
     border-bottom: 5px solid orange; 
 }
@@ -88,21 +92,22 @@ body {
 .box5 {
     border-right: 5px solid orange;
     border-bottom: 5px solid orange; 
-}
+} */
 
-.box6 {
+/* .box6 {
     border-bottom: 5px solid orange;
-}
+} */
 
-.box7 {
-    border-right: 5px solid orange;
-}
-
+.box7, 
 .box8 {
     border-right: 5px solid orange;
 }
 
-.left-sidebar {
+/* .box8 {
+    border-right: 5px solid orange;
+} */
+
+.left-sidebar, .right-sidebar {
     display: flex;
     justify-content: center;
     width: 20%;
@@ -111,29 +116,7 @@ body {
     /* border: 2px solid orange; */
 }
 
-.right-sidebar {
-    display: flex;
-    justify-content: center;
-    width: 20%;
-    height: 100%;
-    background: linear-gradient(0deg, red, orange, yellow, green, blue, indigo, violet, red);
-    /* border: 2px solid orange;
-    border: 2px solid blue; */
-}
-
-.left-wins {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: center;
-    align-items: center;
-    width: 75%;
-    height: 15%;
-    margin-top: 45px;
-    /* border: 2px solid pink */
-}
-
-.right-wins {
+.left-wins, .right-wins {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
