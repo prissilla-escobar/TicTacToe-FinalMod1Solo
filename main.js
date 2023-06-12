@@ -47,6 +47,7 @@ window.addEventListener("load", displayTurn)
 grid.addEventListener("click", function(event) {
     addToken(event);
     addBoxes(event);
+    increaseWins();
 })
 
 
@@ -75,26 +76,31 @@ function addToken(event) {
 
 function addBoxes(event) {
     var boxOccupied = false
-    for (var j = 0; j < players.length; j++){
-        if (event.target.innerHTML === players[j].token) {
-            if (!players[j].boxesOccupied.includes(event.target.id)) {
-                players[j].boxesOccupied.push(event.target.id)
+    for (var i = 0; i < players.length; i++){
+        if (event.target.innerHTML === players[i].token) {
+            if (!players[i].boxesOccupied.includes(event.target.id)) {
+                players[i].boxesOccupied.push(event.target.id)
                 boxOccupied = true
             }
         }
     }
 }
 
-// function increaseWins() {
-//     for (var i = 0; i < wins.length; i++) {
-//         console.log(wins[i])
-//         for (var j = 0; j < players.boxesOcuppied.length; j++) {
-//             if (players.boxesOccupied.contains(wins[i])) {
-//                 players[j].wins += 1
-//             }
-//     }
-//     }
-// }
+function increaseWins() {
+    for (var i = 0; i < wins.length; i++) {
+        for (var j = 0; j < players.length; j++) {
+            var numberWins = 0
+            for (var p = 0; p < wins[i].length; p++) {
+                if (players[j].boxesOccupied.includes(wins[i][p])) {
+                    numberWins += 1
+                }
+            }
+            if (numberWins === wins[i].length) {
+                players[j].wins += 1
+            }
+        }
+    }
+}
 
 // players[i].wins += 1
 // if players[i].wins = 3
