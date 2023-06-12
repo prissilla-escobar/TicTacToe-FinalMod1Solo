@@ -119,7 +119,8 @@ function increaseWins() {
                 playersTurn.innerHTML = `${players[j].token} won!`
                 players[j].wins ++
                 setTimeout(clearBoard, 5000)
-                players[j].boxesOccupied = []
+                players[0].boxesOccupied = []
+                players[1].boxesOccupied = []
             }
         }
     }
