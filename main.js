@@ -60,13 +60,15 @@ function displayTurn() {
 
 function addToken(event) {
     for (var i = 0; i < players.length; i++) {
+        if (players[i].isTurn === true) {
         event.target.closest('section').innerHTML = `${players[i].token}`
+        }
     }
 }
 
 function increaseWins() {
     for (var i = 0; i < wins[i].length; i++) {
-        console.log("hi")
+        
     }
     for (var i = 0; i < players.length; i++) {
         if (players.boxesOccupied[j]) {
