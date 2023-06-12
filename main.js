@@ -56,6 +56,11 @@ function randomPlayer(array) {
 function displayTurn() {
     var randoPlayer = players[randomPlayer(players)]
      playersTurn.innerHTML = `It's ${randoPlayer.token}'s Turn!`
+     for (var i = 0; i < players.length; i ++) {
+        if (randoPlayer.token === players[i].token) {
+            players[i].isTurn = true
+        }
+     }
 }
 
 function addToken(event) {
