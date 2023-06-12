@@ -5,8 +5,6 @@ var box = document.getElementsByClassName("box")
 
 
 
-
-
 // data model
 
 var players = [ {
@@ -66,12 +64,23 @@ function displayTurn() {
      }
 }
 
+function alternatePlayerTurn() {
+    for (var i = 0; i < players.length; i++) {
+        if (players[i].isTurn === true) {
+            players[i].isTurn = false
+        } else {
+            (players[i].isTurn = true)
+        }
+    }
+}
+
 function addToken(event) {
     for (var i = 0; i < players.length; i++) {
         if (players[i].isTurn === true) {
         event.target.closest('section').innerHTML = `${players[i].token}`
         }
     }
+    alternatePlayerTurn()
 }
 
 function addBoxes(event) {
@@ -82,6 +91,9 @@ function addBoxes(event) {
                 players[i].boxesOccupied.push(event.target.id)
                 boxOccupied = true
             }
+            if (boxOccupied = true) {
+                event.target.id.setAttribute("disabled", "")
+            }
         }
     }
 }
@@ -91,8 +103,6 @@ function clearBoard() {
         box[i].innerHTML = ""
     }
 }
-
-
 
 function increaseWins() {
     for (var i = 0; i < wins.length; i++) {
@@ -125,10 +135,6 @@ function increaseWins() {
 //         isTurn: false,
 //         class: ".star-emoji"
 //     }
-// }
-
-// function increaseWins() {
-//     if (
 // }
 
 // to keep track of the mark:
