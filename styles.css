@@ -52,13 +52,19 @@ body {
 }
 
 .playing-box {
-    width: 75%;
-    height: 65%;
-    display: grid;
-    grid-template-columns: auto auto auto;
-    justify-items: center;
+    width: 45%;
+    height: 60%;
+    /* display: grid;
+    grid-template-columns: repeat(3, 3fr); */
+    /* justify-items: center;
     align-content: center;
-    justify-content: center;
+    justify-content: center; */
+    display: grid;
+    grid-template-columns: repeat(3, 3fr);
+    position: fixed;
+    grid-gap: 0px;
+    padding: 18%;
+    margin-top: 20px;
 }
 .box {
     text-align: center;
