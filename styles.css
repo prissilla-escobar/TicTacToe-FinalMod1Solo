@@ -145,3 +145,7 @@ body {
     margin-top: 45px;
     /* border: 2px solid darkorange */
 }
+
+.box:disabled {
+    cursor:not-allowed;
+}
