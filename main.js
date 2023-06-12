@@ -91,8 +91,10 @@ function addBoxes(event) {
                 players[i].boxesOccupied.push(event.target.id)
                 boxOccupied = true
             }
-            if (boxOccupied = true) {
-                event.target.id.setAttribute("disabled", "")
+            for (var j =0; j < box.length; j ++) {
+                if (boxOccupied === true) {
+                    box[j].setAttribute("disabled", " ")
+                }
             }
         }
     }
