@@ -1,6 +1,7 @@
 // query selectors
 var grid = document.querySelector(".playing-box")
 var playersTurn  = document.querySelector(".players-turn")
+var box = document.getElementsByClassName("box")
 
 
 
@@ -27,24 +28,25 @@ var players = [ {
     }
 ]
 
-var boxes = [box1, box2, box3, box4, box5, box6, box7, box8, box9]
+var boxes = ["box1", "box2", "box3", "box4", "box5", "box6", "box7", "box8", "box9"]
 
 var wins = [
-    [box1, box2, box3],
-    [box4, box5, box6],
-    [box7, box8, box9],
-    [box1, box5, box9],
-    [box3, box5, box7],
-    [box1, box4, box7],
-    [box2, box5, box8],
-    [box3, box6, box9]
+    ['box1', 'box2', 'box3'],
+    ['box4', 'box5', 'box6'],
+    ['box7', 'box8', 'box9'],
+    ['box1', 'box5', 'box9'],
+    ['box3', 'box5', 'box7'],
+    ['box1', 'box4', 'box7'],
+    ['box2', 'box5', 'box8'],
+    ['box3', 'box6', 'box9']
 ]
 
 // event listeners
 
 window.addEventListener("load", displayTurn)
 grid.addEventListener("click", function(event) {
-    addToken(event)
+    addToken(event);
+    addBoxes(event);
 })
 
 
@@ -71,16 +73,28 @@ function addToken(event) {
     }
 }
 
-function increaseWins() {
-    for (var i = 0; i < wins[i].length; i++) {
-        
-    }
-    for (var i = 0; i < players.length; i++) {
-        if (players.boxesOccupied[j]) {
-
+function addBoxes(event) {
+    var boxOccupied = false
+    for (var j = 0; j < players.length; j++){
+        if (event.target.innerHTML === players[j].token) {
+            if (!players[j].boxesOccupied.includes(event.target.id)) {
+                players[j].boxesOccupied.push(event.target.id)
+                boxOccupied = true
+            }
         }
     }
 }
+
+// function increaseWins() {
+//     for (var i = 0; i < wins.length; i++) {
+//         console.log(wins[i])
+//         for (var j = 0; j < players.boxesOcuppied.length; j++) {
+//             if (players.boxesOccupied.contains(wins[i])) {
+//                 players[j].wins += 1
+//             }
+//     }
+//     }
+// }
 
 // players[i].wins += 1
 // if players[i].wins = 3
