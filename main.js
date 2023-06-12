@@ -86,17 +86,28 @@ function addBoxes(event) {
     }
 }
 
+function clearBoard() {
+    for (var i = 0; i < box.length; i++) {
+        box[i].innerHTML = ""
+    }
+}
+
+
+
 function increaseWins() {
     for (var i = 0; i < wins.length; i++) {
         for (var j = 0; j < players.length; j++) {
             var numberWins = 0
             for (var p = 0; p < wins[i].length; p++) {
                 if (players[j].boxesOccupied.includes(wins[i][p])) {
-                    numberWins += 1
+                    numberWins ++
                 }
             }
             if (numberWins === wins[i].length) {
-                players[j].wins += 1
+                playersTurn.innerHTML = `${players[j].token} won!`
+                players[j].wins ++
+                setTimeout(clearBoard, 5000)
+                players[j].boxesOccupied = []
             }
         }
     }
