@@ -20,8 +20,8 @@ I am in my 5th week of Mod 1 and was given one week to create a user friendly ap
 ## Learning Goals
 - Create an application completely independently without step-by-step instructions
 - Further understanding of logic behind creation of functions
-- Importance of manipulating the data model before the DOM
-- Understanding the importants of haiving an eye for detail
+- Understanding the importance of manipulating the data model before the DOM
+- Understanding the importantce of having an eye for detail
 
 ## Wins + Challenges
 A win overall for me was writing the JavaScript behavior. This was the first time that I was not given step by step tasks to take in order to create an application and the first time on my own as well. Once I finished my HTML and CSS, I really struggled on where to even start with JavaScript. I took a day off and started writing the logic on my own in a notebook. Once I got the courage to put my hands on the keyboard, it was hard to stop.
@@ -36,4 +36,4 @@ I did end the project with a bug that I could not fix. Though the function to di
 - User can pick their own background
 
 ## Resources
-I used Josh Comeau's custom [CSS Reset](https://www.joshwcomeau.com/css/custom-css-reset/) to ensure that my app is will be more clean and lead to a better user experience.
+I used Josh Comeau's custom [CSS Reset](https://www.joshwcomeau.com/css/custom-css-reset/) to ensure that my app is more clean and lead to a better user experience.
