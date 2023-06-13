@@ -28,11 +28,10 @@ A win overall for me was writing the JavaScript behavior. This was the first tim
 
 I really struggled with making the function that would end the game in a draw. The function that I wrote is quite lengthy and has nested for loops which is not preferred. Completeing this functionn, however, was also a win for me because I worked on it for a really long time. When I got the logic to work to end the game, I was happy. I would want to revisit it to see how I can complete this task without nested for loops in order to advance my knowledge.
 
-I did end the project with two bugs that I could not fix. One was disabling a box that was occupied. Though the function did work, I was unable to get the cursor to have something visual on it so that the user could see that they cannot click the box. The other but was alternating players after a game ends. The game will end and restart, however, it will restart with the same player that it ended with.
+I did end the project with a bug that I could not fix. Though the function to disable an occupied box did work, I was unable to get the cursor to have something visual on it so that the user could see that they cannot click the box.
 
 ## Future Features
 - Local storage added
-- When game ends, alternate players starts the next game
 - User can pick their own token
 - User can pick their own background
 
