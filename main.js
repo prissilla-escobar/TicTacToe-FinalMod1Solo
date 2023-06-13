@@ -2,6 +2,8 @@
 var grid = document.querySelector(".playing-box")
 var playersTurn  = document.querySelector(".players-turn")
 var box = document.getElementsByClassName("box")
+var starWinCount = document.querySelector(".star-counter")
+var heartWinCount = document.querySelector(".heart-counter")
 
 
 
@@ -46,6 +48,7 @@ grid.addEventListener("click", function(event) {
     addToken(event)
     addBoxes(event)
     increaseWins()
+    updateWins()
 })
 
 
@@ -69,7 +72,7 @@ function alternatePlayerTurn() {
         if (players[i].isTurn === true) {
             players[i].isTurn = false
         } else {
-            (players[i].isTurn = true)
+            players[i].isTurn = true
             playersTurn.innerHTML = `It's ${players[i].token}'s turn!`
         }
     }
@@ -147,6 +150,11 @@ function increaseWins() {
         }
     }
 } 
+
+function updateWins() {
+    starWinCount.innerHTML = `${players[0].wins} wins`
+    heartWinCount.innerHTML = `${players[1].wins} wins`
+}
 
 // maybe try to do it this way when refactoring
 // function createPlayer(player) {
