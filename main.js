@@ -1,29 +1,28 @@
 // query selectors
+
 var grid = document.querySelector(".playing-box")
 var playersTurn  = document.querySelector(".players-turn")
 var box = document.getElementsByClassName("box")
 var starWinCount = document.querySelector(".star-counter")
 var heartWinCount = document.querySelector(".heart-counter")
 
-
-
 // data model
 
-var players = [ {
+var players = [
+    {
     id: 1,
     name: "player1",
     wins: 0,
     isTurn: false,
     token: "⭐️",
-    class: ".star-emoji",
     boxesOccupied: []
     }, 
-    {id: 2,
+    {
+    id: 2,
     name: "player2",
     wins: 0,
     isTurn: false,
     token: '💚',
-    class: ".heart-emoji",
     boxesOccupied: []
     }
 ]
@@ -51,8 +50,8 @@ grid.addEventListener("click", function(event) {
     updateWins()
 })
 
-
 // functions
+
 function randomPlayer(array) {
     return Math.floor(Math.random() * array.length)
 }
@@ -71,7 +70,20 @@ function alternatePlayerTurn() {
     for (var i = 0; i < players.length; i++) {
         if (players[i].isTurn === true) {
             players[i].isTurn = false
-        } else {
+        } else if (players[i].isTurn === false) {
+            players[i].isTurn = true
+            playersTurn.innerHTML = `It's ${players[i].token}'s turn!`
+        }
+    }
+}
+
+function timeOutAlternatePlayerTurn() {
+    alternatePlayerTurn()
+    clearBoard()
+    for (var i = 0; i < players.length; i ++) {
+        if (players[i].isTurn === true) {
+            players[i].isTurn = false
+        } else if (players[i].isTurn === false) {
             players[i].isTurn = true
             playersTurn.innerHTML = `It's ${players[i].token}'s turn!`
         }
@@ -99,9 +111,9 @@ function addBoxes(event) {
             }
         }
     }
-        for (var p = 0; p < occupiedBoxes.length; p++) {
-            var boxId = document.getElementById(occupiedBoxes[p]) 
-            boxId.classList.add("disabled")
+    for (var p = 0; p < occupiedBoxes.length; p++) {
+        var boxId = document.getElementById(occupiedBoxes[p]) 
+        boxId.classList.add("disabled")
     }
 }
 
@@ -126,10 +138,9 @@ function increaseWins() {
                 var isDraw = false
                 playersTurn.innerHTML = `${players[j].token} won!`
                 players[j].wins ++
-                setTimeout(clearBoard, 5000)
+                setTimeout(timeOutAlternatePlayerTurn, 5000)
                 players[0].boxesOccupied = []
                 players[1].boxesOccupied = []
-                setTimeout(alternatePlayerTurn, 5000)
                 return
             } 
         }
@@ -146,7 +157,7 @@ function increaseWins() {
         setTimeout(clearBoard, 5000)
         players[0].boxesOccupied = []
         players[1].boxesOccupied = []
-        setTimeout(alternatePlayerTurn, 5000)
+        setTimeout(timeOutAlternatePlayerTurn, 5000)
         }
     }
 } 
@@ -155,23 +166,3 @@ function updateWins() {
     starWinCount.innerHTML = `${players[0].wins} wins`
     heartWinCount.innerHTML = `${players[1].wins} wins`
 }
-
-// maybe try to do it this way when refactoring
-// function createPlayer(player) {
-//     return {
-//         id: Date.now(),
-//         name: player,
-//         wins: wins || 0,
-//         isTurn: false,
-//         class: ".star-emoji"
-//     }
-// }
-
-// to keep track of the mark:
-// he added a data num property and when it was clicked, he parseInt event.target.dataattribute? and pushed
-// into player moves so he had an array of player moves
-// data-num=0 added to each grid section
-
-// tried adding in a new array to disable but didn't work
-// var occupiedBoxes = []
-// occupiedBoxes.push(event.target.id)
