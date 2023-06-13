@@ -6,8 +6,6 @@ var box = document.getElementsByClassName("box")
 var starWinCount = document.querySelector(".star-counter")
 var heartWinCount = document.querySelector(".heart-counter")
 
-
-
 // data model
 
 var players = [
@@ -171,14 +169,3 @@ function updateWins() {
     starWinCount.innerHTML = `${players[0].wins} wins`
     heartWinCount.innerHTML = `${players[1].wins} wins`
 }
-
-// maybe try to do it this way when refactoring
-// function createPlayer(player) {
-//     return {
-//         id: Date.now(),
-//         name: player,
-//         wins: wins || 0,
-//         isTurn: false,
-//         class: ".star-emoji"
-//     }
-// }
