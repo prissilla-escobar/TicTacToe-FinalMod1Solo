@@ -1,7 +1,6 @@
 * {
     margin: 0;
     color: rgb(6, 49, 144);
-    /* border: 2px solid orange; */
     font-size: 35px;
 }
 
@@ -54,11 +53,6 @@ body {
 .playing-box {
     width: 45%;
     height: 60%;
-    /* display: grid;
-    grid-template-columns: repeat(3, 3fr); */
-    /* justify-items: center;
-    align-content: center;
-    justify-content: center; */
     display: grid;
     grid-template-columns: repeat(3, 3fr);
     position: fixed;
@@ -66,6 +60,7 @@ body {
     padding: 18%;
     margin-top: 20px;
 }
+
 .box {
     text-align: center;
     padding: 40px;
@@ -80,38 +75,15 @@ body {
     border-bottom: 5px solid orange;
 }
 
-/* .box2 {
-    border-right: 5px solid orange;
-    border-bottom: 5px solid orange;
-} */
-
 .box3,
 .box6 {
     border-bottom: 5px solid orange;
 }
 
-/* .box4 {
-    border-right: 5px solid orange;
-    border-bottom: 5px solid orange; 
-}
-
-.box5 {
-    border-right: 5px solid orange;
-    border-bottom: 5px solid orange; 
-} */
-
-/* .box6 {
-    border-bottom: 5px solid orange;
-} */
-
 .box7, 
 .box8 {
     border-right: 5px solid orange;
 }
-
-/* .box8 {
-    border-right: 5px solid orange;
-} */
 
 .left-sidebar, .right-sidebar {
     display: flex;
@@ -119,7 +91,6 @@ body {
     width: 20%;
     height: 100%;
     background:linear-gradient(0deg, red, orange, yellow, green, blue, indigo, violet, red);
-    /* border: 2px solid orange; */
 }
 
 .left-wins, .right-wins {
@@ -131,7 +102,6 @@ body {
     width: 75%;
     height: 15%;
     margin-top: 45px;
-    /* border: 2px solid pink */
 }
 
 .players-turn {
@@ -143,10 +113,8 @@ body {
     width: 75%;
     height: 15%;
     margin-top: 45px;
-    /* border: 2px solid darkorange */
 }
 
 .disabled {
     pointer-events: none;
-    cursor: not-allowed;
 }
