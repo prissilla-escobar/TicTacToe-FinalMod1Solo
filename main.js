@@ -77,20 +77,17 @@ function alternatePlayerTurn() {
     }
 }
 
-// function alternatePlayerAfterGame() {
-//     for (var i = 0; i < players.length; i++) {
-//         if (players[i].isTurn === false) {
-//             players[i].isTurn = true
-//         } else if (players[i].isTurn === true) {
-//             players[i].isTurn = false
-//             playersTurn.innerHTML = `It's ${players[i].token}'s turn!`
-//         }
-//     }
-// }
-
 function timeOutAlternatePlayerTurn() {
     alternatePlayerTurn()
     clearBoard()
+    for (var i = 0; i < players.length; i ++) {
+        if (players[i].isTurn === true) {
+            players[i].isTurn = false
+        } else if (players[i].isTurn === false) {
+            players[i].isTurn = true
+            playersTurn.innerHTML = `It's ${players[i].token}'s turn!`
+        }
+    }
 }
 
 function addToken(event) {
