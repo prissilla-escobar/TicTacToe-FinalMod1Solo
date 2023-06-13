@@ -70,6 +70,7 @@ function alternatePlayerTurn() {
             players[i].isTurn = false
         } else {
             (players[i].isTurn = true)
+            playersTurn.innerHTML = `It's ${players[i].token}'s turn!`
         }
     }
 }
@@ -77,7 +78,6 @@ function alternatePlayerTurn() {
 function addToken(event) {
     for (var i = 0; i < players.length; i++) {
         if (players[i].isTurn === true) {
-            console.log(event.target)
         event.target.closest('div').innerHTML = `${players[i].token}`
         }
     }
@@ -110,6 +110,7 @@ function clearBoard() {
 }
 
 function increaseWins() {
+    var isDraw = true
     for (var i = 0; i < wins.length; i++) {
         for (var j = 0; j < players.length; j++) {
             var numberWins = 0
@@ -119,18 +120,33 @@ function increaseWins() {
                 }
             }
             if (numberWins === wins[i].length) {
+                var isDraw = false
                 playersTurn.innerHTML = `${players[j].token} won!`
                 players[j].wins ++
                 setTimeout(clearBoard, 5000)
                 players[0].boxesOccupied = []
                 players[1].boxesOccupied = []
-            }
+                setTimeout(alternatePlayerTurn, 5000)
+                return
+            } 
         }
     }
-}
-
-// players[i].wins += 1
-// if players[i].wins = 3
+    if (isDraw === true) {
+        for (var k = 0; k < boxes.length; k++) {
+            if (!players[0].boxesOccupied.includes(boxes[k]) && !players[1].boxesOccupied.includes(boxes[k])) {
+                isDraw = false
+                return
+            }
+        }
+    if (isDraw === true) {
+        playersTurn.innerHTML = "It's a draw!"
+        setTimeout(clearBoard, 5000)
+        players[0].boxesOccupied = []
+        players[1].boxesOccupied = []
+        setTimeout(alternatePlayerTurn, 5000)
+        }
+    }
+} 
 
 // maybe try to do it this way when refactoring
 // function createPlayer(player) {
