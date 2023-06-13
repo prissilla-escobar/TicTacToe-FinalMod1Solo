@@ -146,6 +146,7 @@ body {
     /* border: 2px solid darkorange */
 }
 
-.box:disabled {
-    cursor:not-allowed;
+.disabled {
+    pointer-events: none;
+    cursor: not-allowed;
 }
