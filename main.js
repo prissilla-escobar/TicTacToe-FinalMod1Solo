@@ -43,9 +43,9 @@ var wins = [
 
 window.addEventListener("load", displayTurn)
 grid.addEventListener("click", function(event) {
-    addToken(event);
-    addBoxes(event);
-    increaseWins();
+    addToken(event)
+    addBoxes(event)
+    increaseWins()
 })
 
 
@@ -77,7 +77,8 @@ function alternatePlayerTurn() {
 function addToken(event) {
     for (var i = 0; i < players.length; i++) {
         if (players[i].isTurn === true) {
-        event.target.closest('section').innerHTML = `${players[i].token}`
+            console.log(event.target)
+        event.target.closest('div').innerHTML = `${players[i].token}`
         }
     }
     alternatePlayerTurn()
@@ -85,22 +86,26 @@ function addToken(event) {
 
 function addBoxes(event) {
     var boxOccupied = false
+    var occupiedBoxes = []
     for (var i = 0; i < players.length; i++){
         if (event.target.innerHTML === players[i].token) {
             if (!players[i].boxesOccupied.includes(event.target.id)) {
                 players[i].boxesOccupied.push(event.target.id)
+                occupiedBoxes.push(event.target.id)
                 boxOccupied = true
             }
-            if (boxOccupied = true) {
-                event.target.id.setAttribute("disabled", "")
-            }
         }
+    }
+        for (var p = 0; p < occupiedBoxes.length; p++) {
+            var boxId = document.getElementById(occupiedBoxes[p]) 
+            boxId.classList.add("disabled")
     }
 }
 
 function clearBoard() {
     for (var i = 0; i < box.length; i++) {
         box[i].innerHTML = ""
+        box[i].classList.remove("disabled")
     }
 }
 
@@ -117,7 +122,8 @@ function increaseWins() {
                 playersTurn.innerHTML = `${players[j].token} won!`
                 players[j].wins ++
                 setTimeout(clearBoard, 5000)
-                players[j].boxesOccupied = []
+                players[0].boxesOccupied = []
+                players[1].boxesOccupied = []
             }
         }
     }
@@ -141,3 +147,7 @@ function increaseWins() {
 // he added a data num property and when it was clicked, he parseInt event.target.dataattribute? and pushed
 // into player moves so he had an array of player moves
 // data-num=0 added to each grid section
+
+// tried adding in a new array to disable but didn't work
+// var occupiedBoxes = []
+// occupiedBoxes.push(event.target.id)

@@ -145,3 +145,8 @@ body {
     margin-top: 45px;
     /* border: 2px solid darkorange */
 }
+
+.disabled {
+    pointer-events: none;
+    cursor: not-allowed;
+}
